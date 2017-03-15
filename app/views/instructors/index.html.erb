@@ -1,0 +1,27 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Middle</th>
+      <th>Last</th>
+      <th>Email</th>
+  </thead>
+
+  <tbody>
+    <% @instructors.each do |instructor| %>
+      <tr>
+        <td><%= instructor.first %></td>
+        <td><%= instructor.middle %></td>
+        <td><%= instructor.last %></td>
+        <td><%= instructor.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

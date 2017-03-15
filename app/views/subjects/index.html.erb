@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instructors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Abbreviation</th>
+      <th>Term</th>
+  </thead>
+
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= subject.abbreviation %></td>
+        <td><%= subject.term %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
