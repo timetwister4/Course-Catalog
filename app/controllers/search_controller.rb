@@ -1,3 +1,4 @@
+include SearchHelper
 class SearchController < ApplicationController
   def new
 
@@ -5,7 +6,7 @@ class SearchController < ApplicationController
 
   # POST /search
   def show
-    @results = search_for(params[:keyword], params[:subject])
-
+    @user = current_user
+    @results = search_for(params[:search][:keyword], params[:search][:subject_id])
   end
 end

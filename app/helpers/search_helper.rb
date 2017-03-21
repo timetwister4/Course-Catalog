@@ -1,7 +1,8 @@
 module SearchHelper
 
   def search_for keyword, subject
-    CourseSubject.joins(:course).where(courses: {"name LIKE ?", keyword}, subject_id: subject)
+    Course.joins(:course_subjects).where("name LIKE ? and course_subjects.subject_id = ?", keyword, subject)
+
   end
 
 

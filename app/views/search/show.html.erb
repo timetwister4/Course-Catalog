@@ -1,2 +1,7 @@
 <% @results.each do |course| %>
-  <% form_for(:enrollment, enrollment_path(@user)) %> 
+  <%= form_for(:enrollment, url: "/enrollments/create/#{@user.id}&#{course.id}") do |f| %>
+  <div class="field">
+    <%=course.name %> <%=f.submit%>
+  </div>
+  <% end %>
+<% end %>
