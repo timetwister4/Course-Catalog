@@ -1,9 +1,22 @@
 <div class="center jumbotron">
   Welcome to Course Catalog
   <br>
+  <% unless logged_in? %>
   <%= link_to "Sign up", signup_path %>
   <br>
-  or login
+  or
   <br>
   <%= link_to "Log in", login_path %>
+  <br>
+  <% else %>
+  <%= render '/enrollments/show.html.erb' %>
+  <% end %>
+  <br>
+  Find Courses by
+  <br>
+  <%= link_to "Searching", search_new_path %>
+  <br>
+  or just browse
+  <br>
+    <%=link_to "Subjects", subjects_path %> | <%=link_to "Instructors", instructors_path %> | <%=link_to "Courses", courses_path %>
 </div>

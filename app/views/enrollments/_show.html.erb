@@ -1,0 +1,10 @@
+<% if @enrollments.empty?%>
+  No current enrollments
+<% else %>
+  Current Enrollments
+  <br>
+<% @enrollments.each do |enrollment| %>
+  <%= enrollment.course.name%>
+  <br>
+<%end%>
+<%end%>
