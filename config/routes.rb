@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
   get 'enrollments/:user_id/show', to: 'enrollments#show'
+  post 'enrollments/destroy/:user_id&:course_id', to: 'enrollments#destroy'
 
   get 'search/new'
 

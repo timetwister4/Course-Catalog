@@ -1,12 +1,34 @@
-<% @results.each do |course| %>
-  <% unless !logged_in?  || enrolled?(@user, course)%>
-    <%= form_for(:enrollment, url: "/enrollments/create/#{@user.id}&#{course.id}") do |f| %>
-      <div class="field">
-        <%=course.name %> <%=f.submit "Enroll" %>
-      </div>
-
+<table>
+  Test
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Code</th>
+      <th>Description</th>
+      <% unless !logged_in?%>
+      <th> Enrollment Status </th>
+      <%end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= course.code %></td>
+      <td><%= course.description %></td>
+      <% unless !logged_in?%>
+        <td><% if enrolled?(@user, course)%>
+            <%= form_for(:enrollment, url: "/enrollments/destroy/#{@user.id}&#{course.id}") do |f| %>
+              <%= f.submit "Unenroll" %>
+            <% end %>
+        <% else %>
+          <%= form_for(:enrollment, url: "/enrollments/create/#{@user.id}&#{course.id}") do |f| %>
+            <%=f.submit "Enroll" %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% else %>
-      <%=course.name %>
-    <% end %> 
-<% end %>
+    </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
