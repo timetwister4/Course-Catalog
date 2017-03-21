@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   post 'enrollments/create/:user_id&:course_id', to: 'enrollments#create'
 
-  get 'enrollments/new'
 
   get 'enrollments/show'
 

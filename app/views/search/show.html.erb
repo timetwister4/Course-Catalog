@@ -1,7 +1,12 @@
 <% @results.each do |course| %>
-  <%= form_for(:enrollment, url: "/enrollments/create/#{@user.id}&#{course.id}") do |f| %>
-  <div class="field">
-    <%=course.name %> <%=f.submit "Enroll" unless !logged_in?  || enrolled?(@user, course)%>
-  </div>
-  <% end %>
+  <% unless !logged_in?  || enrolled?(@user, course)%>
+    <%= form_for(:enrollment, url: "/enrollments/create/#{@user.id}&#{course.id}") do |f| %>
+      <div class="field">
+        <%=course.name %> <%=f.submit "Enroll" %>
+      </div>
+
+      <% end %>
+    <% else %>
+      <%=course.name %>
+    <% end %> 
 <% end %>
