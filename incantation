@@ -1,1 +1,0 @@
-Course.joins(:course_subjects).where("name LIKE ? and course_subjects.subject_id = ?", "Senior Essay", 1)

@@ -7,6 +7,8 @@ class SearchController < ApplicationController
   # POST /search
   def show
     @user = current_user
-    @results = search_for(params[:search][:keyword], params[:search][:subject_id])
+    byebug
+    @results = search_for(params[:search][:keyword], params[:subject])
+    byebug
   end
 end
