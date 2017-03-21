@@ -1,6 +1,6 @@
 class EnrollmentsController < ApplicationController
   def create
-    byebug
+      Enrollment.create(user_id: params[:user_id], course_id: params[:course_id])
   end
 
   def show
