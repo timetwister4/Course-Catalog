@@ -24,7 +24,7 @@ class SearchControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "returns courses when given both keyword and subject" do
-    
+
   end
 
 end

@@ -3,11 +3,9 @@
 one:
   email: MyString
   password_digest: MyString
-  string,: MyString
   username: MyString
 
 two:
   email: MyString
   password_digest: MyString
-  string,: MyString
   username: MyString
