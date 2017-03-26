@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170321014614) do
 
   create_table "course_subjects", force: :cascade do |t|
     t.integer "course_id"
-    t.integer "subject_id"
+    t.string  "subject_id"
   end
 
   create_table "courses", force: :cascade do |t|

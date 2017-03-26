@@ -14,15 +14,14 @@ class SearchControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show when both keyword and subject are submitted" do
-    get search_show_url, params:{ search: {subject_id: @subject.id, keyword: @course.name}}
+    get search_show_url, params:{ search: {subject: @subject.id, keyword: @course.name}}
     assert_response :success
   end
 
   test "should get show courses with just subject" do
-    get search_show_url, params:{ search: {subject_id: @subject.id}}
+    get search_show_url, params:{ search: {subject: @subject.id}}
     assert_response :success
   end
-
 
 
   test "should get show with just a keyword" do

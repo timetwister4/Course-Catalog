@@ -7,7 +7,7 @@
 
 <div class="field">
   <%= f.label :subject %>
-  <%= select_tag "subject", options_from_collection_for_select(Subject.all, "id", "name") %>
+  <%= f.select "subject", options_from_collection_for_select(Subject.all, "id", "name") %>
 </div>
 
 <div class="actions">
