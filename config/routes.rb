@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-
+  get '/test', to: 'static_pages#home'
+  get '/javascript_test', to: 'static_pages#javascript_test'
   root 'static_pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function ()){
+  $('#course_search').submit(function(){
+    $.get(this.action, $(this).serialize(), null, 'script');
+  });
+};

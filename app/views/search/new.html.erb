@@ -1,16 +1,18 @@
-<%= form_for(:search, url: search_show_url, method: :get) do |f| %>
+<%= form_tag search_new_url, method: 'get', id: "course_search" do %>
 
 <div class="field">
-  <%= f.label :keyword %>
-  <%= f.text_field :keyword %>
+  <%= label_tag :keyword %>
+  <%= text_field_tag :keyword, params[:keyword] %>
 </div>
 
 <div class="field">
-  <%= f.label :subject %>
-  <%= f.select "subject", options_from_collection_for_select(Subject.all, "id", "name") %>
+  <%= label_tag :subject %>
+  <%= select_tag "subject", options_from_collection_for_select(Subject.all, "id", "name", selected: (params[:subject])) %>
 </div>
 
 <div class="actions">
-  <%= f.submit "search"%>
+  <%= submit_tag "search"%>
 </div>
 <% end %>
+
+<div id="results"><%=render 'results' %></div>
