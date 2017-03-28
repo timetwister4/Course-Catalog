@@ -15,8 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
-$(function ()){
-  $('#course_search').submit(function(){
-    $.get(this.action, $(this).serialize(), null, 'script');
+$(function (){
+  $('#course_search input').keyup(function(){
+    $.get($('#course_search').attr("action"),$('#course_search').serialize(), null, 'script');
+    return false;
   });
-};
+});

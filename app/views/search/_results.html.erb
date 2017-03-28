@@ -1,5 +1,4 @@
 <table>
-  Test
   <thead>
     <tr>
       <th>Course</th>
@@ -19,7 +18,7 @@
       <% unless !logged_in?%>
         <td><% if enrolled?(@user, course)%>
             <%= form_for(:enrollment, url: "/enrollments/destroy/#{@user.id}&#{course.id}") do |f| %>
-              <%= f.submit "Unenroll" %>
+              <%= f.submit "Unenroll"%>
             <% end %>
         <% else %>
           <%= form_for(:enrollment, url: "/enrollments/create/#{@user.id}&#{course.id}") do |f| %>

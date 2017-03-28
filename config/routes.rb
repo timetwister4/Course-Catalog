@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
   post 'enrollments/create/:user_id&:course_id', to: 'enrollments#create'
-
-
   get 'enrollments/:user_id/show', to: 'enrollments#show'
   post 'enrollments/destroy/:user_id&:course_id', to: 'enrollments#destroy'
 
-  get 'search/new'
+  get 'search', to: 'search#new'
 
-  get 'search/show'
 
   get 'courses', to: 'courses#index'
-
   get 'subjects', to: 'subjects#index'
   get 'instructors', to: 'instructors#index'
 
@@ -20,9 +16,6 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-
-  get '/test', to: 'static_pages#home'
-  get '/javascript_test', to: 'static_pages#javascript_test'
   root 'static_pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,4 +1,4 @@
-<%= form_tag search_new_url, method: 'get', id: "course_search" do %>
+<%= form_tag search_url, method: 'get', id: "course_search" do %>
 
 <div class="field">
   <%= label_tag :keyword %>
@@ -10,9 +10,6 @@
   <%= select_tag "subject", options_from_collection_for_select(Subject.all, "id", "name", selected: (params[:subject])) %>
 </div>
 
-<div class="actions">
-  <%= submit_tag "search"%>
-</div>
 <% end %>
 
-<div id="results"><%=render 'results' %></div>
+<div id="results"><%=render 'results' unless @results.empty?%></div>
